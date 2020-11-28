@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Box from '@material-ui/core/Box';
+import {Box,LinearProgress} from '@material-ui/core';
 
-import CircularIndeterminate from "./circularIndeterminate";
 import Blog from './blog';
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +41,7 @@ export default function Home(props) {
   return (
     <Box m={4} className={classes.root}>
       {isLoading ? (
-        <CircularIndeterminate />
+        <LinearProgress />
       ) : (
         blogs.map(blog => <Blog blog={blog} handleLike={handleLike} />)
       )}

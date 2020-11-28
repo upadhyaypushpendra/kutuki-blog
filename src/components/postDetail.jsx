@@ -8,6 +8,7 @@ import {
   Avatar,
   CardContent,
   Fab,
+  LinearProgress
 } from "@material-ui/core";
 import ThumbUpAltTwoToneIcon from "@material-ui/icons/ThumbUpAltTwoTone";
 import CommentTwoToneIcon from "@material-ui/icons/CommentTwoTone";
@@ -15,7 +16,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link, useParams } from "react-router-dom";
 import ReactHtmlParser from 'react-html-parser';
 
-import CircularIndeterminate from "./circularIndeterminate";
 import CommentSection from "./commentSection";
 
 const useStyles = makeStyles((theme) => ({
@@ -78,7 +78,7 @@ export default function PostDetail(props) {
   return (
     <Box m={4} className={classes.root}>
       {isLoading ? (
-        <CircularIndeterminate />
+        <LinearProgress />
       ) : (
         <Card>
           <CardHeader

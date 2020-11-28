@@ -7,12 +7,12 @@ import {
   ListItemText,
   Paper,
   Button,
+  LinearProgress
 } from "@material-ui/core";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Link, useParams } from "react-router-dom";
 
-import CircularIndeterminate from "./circularIndeterminate";
 import NewPostModal from "./newPostModal";
 
 const useStyles = makeStyles((theme) => ({
@@ -109,7 +109,7 @@ export default function AuthorDetail(props) {
   return (
     <Box m={4} className={classes.root}>
       {isLoading ? (
-        <CircularIndeterminate />
+        <LinearProgress />
       ) : (
         <Box display="flex" flexDirection="column">
           <Box
